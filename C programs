@@ -1,56 +1,35 @@
-// Write a program to find the smallest of n numbers.
+// Write a program to get two integers from the user and print the sum of the two integers?
 
 #include<stdio.h>
-#include<math.h>
-
-struct sum
-{
-   int a[100];
-   int b;
-   int tmp;
-   int add;
+struct sum{
+    int a;
+    int b;
+    int r;
 };
-
+struct sum s;
 
 struct sum input()
 {
-   struct sum i;
-   printf("How many elements you want to give?\n");
-   scanf("%d",&i.b);
-   printf("Enter elements:\n");
-   for(int k=0;k<i.b;k++)
-   {
-       scanf("%d",&i.a[k]);
-   }
-   return i;
+    printf("Enter two nos.:\n");
+    scanf("%d%d",&s.a,&s.b);
+    return s;
 }
 
 struct sum compute()
 {
-   struct sum i;
-   int k = 0;
-   i.tmp = i.a[k];
-   for(k=0;k<i.b;k++)
-   {
-       if(i.tmp>i.a[k])
-   {
-       i.tmp = i.a[k];
-   }
-   }
-   return i;
+    s.r = s.a + s.b;
+    return s;
 }
 
 struct sum output()
 {
-   struct sum i;
-   printf("Smallest of all the numbers is %d\n",i.tmp);
+    printf("Addition of %d and %d is %d\n",s.a,s.b,s.r);
 }
 
 int main()
 {
-   struct sum i;
-   input();
-   compute();
-   output();
-   return 0;
+    struct sum s;
+    input();
+    compute();
+    output();
 }
