@@ -1,23 +1,26 @@
-//Write a program to print sum of n numbers
+// Write a program to find the sum of square roots of n numbers.
 
 #include<stdio.h>
+#include<math.h>
+
 struct sum
 {
-   int a[100];
+   float a[100];
    int b;
-   int add;
+   float tmp;
+   float add;
 };
 
 
 struct sum input()
 {
    struct sum i;
-   printf("How manyn elements you want to add?\n");
+   printf("How many elements you want to add?\n");
    scanf("%d",&i.b);
    printf("Enter elements:\n");
    for(int k=0;k<i.b;k++)
    {
-       scanf("%d",&i.a[k]);
+       scanf("%f",&i.a[k]);
    }
    return i;
 }
@@ -28,7 +31,8 @@ struct sum compute()
    i.add = 0;
    for(int k = 0; k<i.b;k++)
    {
-       i.add = i.add + i.a[k];
+       i.tmp = sqrt(i.a[k]);
+       i.add = i.add + i.tmp;
    }
    return i;
 }
@@ -36,7 +40,7 @@ struct sum compute()
 struct sum output()
 {
    struct sum i;
-   printf("Sum of given numbers is %d\n",i.add);
+   printf("Sum of given numbers is %f\n",i.add);
 }
 
 int main()
