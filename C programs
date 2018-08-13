@@ -1,29 +1,42 @@
-// Write a program to get two float from the user and print the sum of the two float?
+// Write a function to compare 2 numbers
 
 #include<stdio.h>
 struct sum{
-    float a;
-    float b;
-    float r;
+    int a;
+    int b;
+    int max;
+    int min;
 };
 struct sum s;
 
 struct sum input()
 {
-    printf("Enter two nos.:\n");
-    scanf("%f%f",&s.a,&s.b);
+    printf("Enter two number to compare:\n");
+    scanf("%d%d",&s.a,&s.b);
     return s;
 }
 
 struct sum compute()
 {
-    s.r = s.a + s.b;
+    if(s.a>s.b){
+    s.max=s.a;
+    s.min=s.b;
+    }
+    else if(s.a<s.b){
+    s.max=s.b;
+    s.min=s.a;
+    }
     return s;
 }
 
 struct sum output()
 {
-    printf("Addition of %f and %f is %f\n",s.a,s.b,s.r);
+    if(s.max!=s.min){
+    printf("%d is greater than %d\n",s.max,s.min);
+    }
+    else{
+        printf("Both numbers are equal\n");
+    }
 }
 
 int main()
