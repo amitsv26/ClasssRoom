@@ -1,26 +1,26 @@
-// Write a program to find the sum of square roots of n numbers.
+// Write a program to find the smallest of n numbers.
 
 #include<stdio.h>
 #include<math.h>
 
 struct sum
 {
-   float a[100];
+   int a[100];
    int b;
-   float tmp;
-   float add;
+   int tmp;
+   int add;
 };
 
 
 struct sum input()
 {
    struct sum i;
-   printf("How many elements you want to add?\n");
+   printf("How many elements you want to give?\n");
    scanf("%d",&i.b);
    printf("Enter elements:\n");
    for(int k=0;k<i.b;k++)
    {
-       scanf("%f",&i.a[k]);
+       scanf("%d",&i.a[k]);
    }
    return i;
 }
@@ -28,11 +28,14 @@ struct sum input()
 struct sum compute()
 {
    struct sum i;
-   i.add = 0;
-   for(int k = 0; k<i.b;k++)
+   int k = 0;
+   i.tmp = i.a[k];
+   for(k=0;k<i.b;k++)
    {
-       i.tmp = sqrt(i.a[k]);
-       i.add = i.add + i.tmp;
+       if(i.tmp>i.a[k])
+   {
+       i.tmp = i.a[k];
+   }
    }
    return i;
 }
@@ -40,7 +43,7 @@ struct sum compute()
 struct sum output()
 {
    struct sum i;
-   printf("Sum of given numbers is %f\n",i.add);
+   printf("Smallest of all the numbers is %d\n",i.tmp);
 }
 
 int main()
