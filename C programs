@@ -1,11 +1,42 @@
-#include <stdio.h>
+#include<stdio.h>
+
+struct emp
+{
+    char name[10];
+    int age;
+};
+
+input()
+{
+ struct emp e;
+    FILE *p,*q;
+    p = fopen("three.txt", "a");
+    printf("Enter Name and Age:");
+    scanf("%s %d", e.name, &e.age);
+    
+}
+
+void output()
+{
+struct emp e;
+    FILE *p,*q;
+ q = fopen("three.txt", "r");
+ fprintf(p,"%s %d", e.name, e.age);
+    fclose(p);
+    do
+    {
+        fscanf(q,"%s %d", e.name, &e.age);
+        printf("%s %d", e.name, e.age);
+    }
+    while(!feof(q));
+}
 
 int main()
 {
-    int n;
-    printf("Enter a number:\n");
-    scanf("%d",&n);
-    printf("User entered number:%d",n);
-
+    struct emp e;
+    FILE *p,*q;
+    input();
+    output();
     return 0;
 }
+
